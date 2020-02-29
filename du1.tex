@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+Rozkládáme číslo 3763 algoritmem Pollard-Floyd.
+\begin{enumerate}
+\item $f(x) \coloneqq x^2 \mod 3763$
+\item $x \coloneqq 1940$
+\item Bude následovat tabulka výpočtů $x',x''$ a NSD$(3763, x'-x'')$ dokud NSD $\neq 1$ \\
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+$x'$ & $x''$ & NSD$(3763, x'-x'')$ \\ \hline
+601 & 3717 & 1 \\ \hline
+3717 & 3720 & 1 \\ \hline
+2117 & 1934 & 1 \\ \hline
+3720 & 463 & 1 \\ \hline
+1850 & 3353 & 1 \\ \hline
+1934 & 2505 & 1 \\ \hline
+3698 & 1975 & 1 \\ \hline
+463 & 2134 & 1 \\ \hline
+3642 & 1710 & 1 \\ \hline
+3353 & 2293 & 53 \\ \hline
+\end{tabular}
+\end{table}
+\item $53 \neq 3763$, máme tedy vlastního dělitele čísla $3763 = 53 \cdot 71$. 
+53 i 71 jsou prvočísla, takže tvoří prvočíselný rozklad 3763.
+\end{enumerate}
+\end{document}
+
