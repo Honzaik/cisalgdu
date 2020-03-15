@@ -1,0 +1,42 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+Rozkládáme číslo 3977 algoritmem Pollard p-1.
+\begin{enumerate}
+\item zvolíme $B \coloneqq 25$
+\item zvolíme náhodně $a \coloneqq 127, d \coloneqq \gcd(3977, 127) = 1$
+\item 
+\begin{enumerate}
+\item $p_1 \coloneqq 2$
+\subitem $e \coloneqq \lfloor \log_2(25) \rfloor = 4$
+\subitem $a \coloneqq 127^{2^4} \mod 3977 = 775$
+\subitem $d \coloneqq \gcd(3977, 774) = 1$
+\item $p_2 \coloneqq 3$
+\subitem $e \coloneqq \lfloor \log_3(25) \rfloor = 2$
+\subitem $a \coloneqq 775^{3^2} \mod 3977 = 3782$
+\subitem $d \coloneqq \gcd(3977, 3781) = 1$
+\item $p_2 \coloneqq 5$
+\subitem $e \coloneqq \lfloor \log_5(25) \rfloor = 2$
+\subitem $a \coloneqq 3782^{5^2} \mod 3977 = 2133$
+\subitem $d \coloneqq \gcd(3977, 2132) = 41$
+\end{enumerate}
+\item return 41
+\end{enumerate}
+Zjistili jsme, že 41 je faktor čísla 3977. Platí $\frac{3977}{41} = 97$. Obě čísla jsou prvočísla. Tudíž $97, 41$ je prvočíselný rozklad 3977.
+
+\end{document}
+
