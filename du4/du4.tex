@@ -1,0 +1,27 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage{indentfirst} %indentace prvního odstavce
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage[czech]{babel}
+\usepackage{mathdots}
+\usepackage{slashbox}
+
+\begin{document}
+$p = 449$. Hledáme číslo $a \in \mathbb{Z}_{449}$ tž. $a^2 \equiv 2 \mod{449}$, $449-1 = 2^6 \cdot 7 \implies q = 7, e = 6$.
+\begin{enumerate}
+\item zvolíme $z_0 = 3 \implies z_0^{\frac{p-1}{2}} = 3^{224} \equiv -1  \mod{449} \implies z = 3^7 \mod{449} = 391$
+\item $y = 391, r = 6, b = 2^7 \mod{449} = 128, x = 2^4 = 16$
+\item hledáme $m \in \mathbb{N}_0$, zkoušením zjistíme, že $m = 5$, protože $b^{2^5} = 128^{32} \equiv 1 \mod{449}$
+\item $t = 391^{2^{6-5-1}} = 391, y = 391^2 \mod{449} = 221, r=5, x = 391\cdot 16 \mod{449} = 419, b = 128\cdot 221 \mod{449} = 1$
+\item $b = 1 \implies m = 0 \implies$ výsledek je $a = x=419$. $(419^2 \mod{449} = 2)$
+\end{enumerate}
+\end{document}
+
