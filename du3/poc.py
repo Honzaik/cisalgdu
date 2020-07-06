@@ -6,6 +6,7 @@ a = 3
 def getS(p1, p2):
     try: 
         if p1[0] == p2[0] and p1[1] == p2[1]:
+            print('here')
             inv = pow(2*p1[1],-1,toFactor)
             return ((3*p1[0]**2+a)*inv) % toFactor
         else:
@@ -19,7 +20,7 @@ def getS(p1, p2):
 
 def addPoints(p1, p2):
     s = getS(p1,p2)
-    x3 = (s^2-p1[0]-p2[0]) % toFactor
+    x3 = (s**2-p1[0]-p2[0]) % toFactor
     y3 = (-p1[1]+s*(p1[0]-x3)) % toFactor
     return [x3,y3]
 
